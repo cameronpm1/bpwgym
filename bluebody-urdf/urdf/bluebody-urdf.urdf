@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="bluebody-urdf">
+  <mujoco>
+        <compiler 
+        meshdir="../meshes/" 
+        balanceinertia="true" 
+        discardvisual="false" />
+  </mujoco>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000180861268158104 -0.00100669926593326 -0.0180191600373319"
+        rpy="0 0 0" />
+      <mass
+        value="0.222069356338279" />
+      <inertia
+        ixx="0.00013051726595754"
+        ixy="-2.0277869957056E-08"
+        ixz="-4.1117912329963E-07"
+        iyy="0.000241825516008572"
+        iyz="-1.51165378024847E-06"
+        izz="0.000330666767704576" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link11">
+    <inertial>
+      <origin
+        xyz="0.035786 0.0035381 -6.6449E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.016042" />
+      <inertia
+        ixx="2.4887E-06"
+        ixy="-2.6602E-07"
+        ixz="1.8107E-12"
+        iyy="1.1113E-05"
+        iyz="4.3937E-13"
+        izz="9.1187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint11"
+    type="revolute">
+    <origin
+      xyz="0.0279 -0.0395 -0.040325"
+      rpy="-1.5708 0.91672 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link11" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link21">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 0 -3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079142" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="7.79609012019864E-24"
+        ixz="-3.34408676099018E-23"
+        iyy="2.69919583243166E-07"
+        iyz="-1.64063470125521E-24"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint21"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.65408" />
+    <parent
+      link="Link11" />
+    <child
+      link="Link21" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link31">
+    <inertial>
+      <origin
+        xyz="0.042 -8.4049715728951E-09 0.0299999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896403" />
+      <inertia
+        ixx="5.72454936139628E-06"
+        ixy="5.75925533464974E-22"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="3.08589497421942E-22"
+        izz="6.99727115654008E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint31"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 -0.019302 0" />
+    <parent
+      link="Link21" />
+    <child
+      link="Link31" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link32">
+    <inertial>
+      <origin
+        xyz="0.0419999999999999 -8.40497158677289E-09 0.0299999999999993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="2.52128692548194E-22"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="3.59566728313748E-22"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint32"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 -0.019302 0" />
+    <parent
+      link="Link21" />
+    <child
+      link="Link32" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link12">
+    <inertial>
+      <origin
+        xyz="0.035786303083496 0.00353814176687808 -6.64347413940978E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160417853284633" />
+      <inertia
+        ixx="2.48870685848507E-06"
+        ixy="-2.66018885577182E-07"
+        ixz="1.81077650390522E-12"
+        iyy="1.11130612289628E-05"
+        iyz="4.39373223528688E-13"
+        izz="9.11871591476064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint12"
+    type="revolute">
+    <origin
+      xyz="0.067 -0.0004 -0.040325"
+      rpy="-1.5708 0.91639 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link12" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link22">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 1.38777878078145E-17 -4.33680868994202E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079141" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="7.08597116247072E-26"
+        ixz="4.46851576450792E-23"
+        iyy="2.69919583243165E-07"
+        iyz="-2.071081492976E-24"
+        izz="1.38027104044293E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint22"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.6544" />
+    <parent
+      link="Link12" />
+    <child
+      link="Link22" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link33">
+    <inertial>
+      <origin
+        xyz="0.042 -8.40497157636455E-09 0.0299999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896403" />
+      <inertia
+        ixx="5.72454936139628E-06"
+        ixy="-8.33798057453452E-22"
+        ixz="-6.05605579279738E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-3.45451170515669E-23"
+        izz="6.99727115654008E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link33.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link33.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint33"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 -0.0047619 0" />
+    <parent
+      link="Link22" />
+    <child
+      link="Link33" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link34">
+    <inertial>
+      <origin
+        xyz="0.0419999999999999 -8.404971579834E-09 0.0299999999999993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="1.52201232709757E-22"
+        ixz="-6.05605579279736E-06"
+        iyy="1.2540943263813E-05"
+        iyz="1.59464485173239E-22"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link34.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link34.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint34"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 -0.0047619 0" />
+    <parent
+      link="Link22" />
+    <child
+      link="Link34" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link13">
+    <inertial>
+      <origin
+        xyz="0.0357863030831948 0.00353814176684442 -6.64487225660038E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160417853287394" />
+      <inertia
+        ixx="2.4887068585687E-06"
+        ixy="-2.66018885598105E-07"
+        ixz="1.81074686738213E-12"
+        iyy="1.11130612291245E-05"
+        iyz="4.39370755249739E-13"
+        izz="9.11871591485151E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link13.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link13.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint13"
+    type="revolute">
+    <origin
+      xyz="0.0279 0.0395 -0.040325"
+      rpy="-1.5708 0.91672 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link13" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link23">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 0 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079142" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="1.42191571546108E-23"
+        ixz="-6.69206265273477E-24"
+        iyy="2.69919583243166E-07"
+        iyz="-1.13566110630696E-23"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link23.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link23.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint23"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.65408" />
+    <parent
+      link="Link13" />
+    <child
+      link="Link23" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link35">
+    <inertial>
+      <origin
+        xyz="0.0419999999999999 -8.40497158677289E-09 0.0299999999999993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="9.26119959980619E-23"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-2.03552667444994E-22"
+        izz="6.99727115654008E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link35.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link35.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link35"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 0.019302 0" />
+    <parent
+      link="Link23" />
+    <child
+      link="Link35" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link36">
+    <inertial>
+      <origin
+        xyz="0.0419999999999999 -8.40497157636455E-09 0.0299999999999993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896403" />
+      <inertia
+        ixx="5.72454936139628E-06"
+        ixy="-3.40026018438698E-22"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-2.96392015291114E-22"
+        izz="6.99727115654009E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link36.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link36.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint36"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 0.019302 0" />
+    <parent
+      link="Link23" />
+    <child
+      link="Link36" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link14">
+    <inertial>
+      <origin
+        xyz="0.0357863030831948 0.00353814176684443 -6.64487222190591E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160417853287394" />
+      <inertia
+        ixx="2.4887068585687E-06"
+        ixy="-2.66018885598104E-07"
+        ixz="1.81074686703606E-12"
+        iyy="1.11130612291245E-05"
+        iyz="4.39370754896383E-13"
+        izz="9.11871591485151E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link14.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link14.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint14"
+    type="revolute">
+    <origin
+      xyz="-0.0279 0.0395 -0.040325"
+      rpy="-1.5708 0.91672 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link14" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link24">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079142" />
+      <inertia
+        ixx="1.58449114328456E-07"
+        ixy="-1.31926562962186E-23"
+        ixz="-1.23614766527045E-23"
+        iyy="2.69919583243166E-07"
+        iyz="8.38669098884647E-24"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link24.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link24.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint24"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.65408" />
+    <parent
+      link="Link14" />
+    <child
+      link="Link24" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link37">
+    <inertial>
+      <origin
+        xyz="0.0420000000000003 -8.404970205933E-09 0.0299999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="1.55036291089739E-22"
+        ixz="-6.05605579279736E-06"
+        iyy="1.2540943263813E-05"
+        iyz="2.29827541114887E-22"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link37.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link37.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint37"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 -0.019302 0" />
+    <parent
+      link="Link24" />
+    <child
+      link="Link37" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link38">
+    <inertial>
+      <origin
+        xyz="0.0420000000000001 -8.404971579834E-09 0.0299999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896403" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="-1.17422381030008E-23"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-1.81192056457179E-22"
+        izz="6.99727115654008E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link38.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link38.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint38"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 -0.019302 0" />
+    <parent
+      link="Link24" />
+    <child
+      link="Link38" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link15">
+    <inertial>
+      <origin
+        xyz="0.035786303083496 0.00353814176687808 -6.64347419090938E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160417853284633" />
+      <inertia
+        ixx="2.48870685848507E-06"
+        ixy="-2.66018885577185E-07"
+        ixz="1.81077650076994E-12"
+        iyy="1.11130612289628E-05"
+        iyz="4.39373224489448E-13"
+        izz="9.11871591476064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link15.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link15.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint15"
+    type="revolute">
+    <origin
+      xyz="-0.067 -0.0004 -0.040325"
+      rpy="-1.5708 0.91639 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link15" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link25">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 1.38777878078145E-17 4.33680868994202E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079141" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="-1.79945787210557E-24"
+        ixz="1.89993972483815E-23"
+        iyy="2.69919583243165E-07"
+        iyz="-4.66941610459328E-24"
+        izz="1.38027104044293E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link25.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link25.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint25"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.6544" />
+    <parent
+      link="Link15" />
+    <child
+      link="Link25" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link39">
+    <inertial>
+      <origin
+        xyz="0.042 -8.40497157809927E-09 0.0299999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="7.94093388050907E-23"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-1.07520445653377E-22"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link39.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link39.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint39"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 0.0047619 0" />
+    <parent
+      link="Link25" />
+    <child
+      link="Link39" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link310">
+    <inertial>
+      <origin
+        xyz="0.042 -8.40497157809927E-09 0.0299999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="1.2573145310806E-22"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="2.24951066821714E-23"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link310.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link310.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint310"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 0.0047619 0" />
+    <parent
+      link="Link25" />
+    <child
+      link="Link310" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link16">
+    <inertial>
+      <origin
+        xyz="0.0357863030831948 0.0035381417668444 -6.64487222190591E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160417853287394" />
+      <inertia
+        ixx="2.4887068585687E-06"
+        ixy="-2.66018885598104E-07"
+        ixz="1.81074686651407E-12"
+        iyy="1.11130612291245E-05"
+        iyz="4.39370755051641E-13"
+        izz="9.1187159148515E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link16.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link16.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint16"
+    type="revolute">
+    <origin
+      xyz="-0.0279 -0.0395 -0.040325"
+      rpy="-1.5708 0.91672 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link16" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link26">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 0 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079142" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="-6.24868933184285E-24"
+        ixz="-2.56983535796572E-24"
+        iyy="2.69919583243166E-07"
+        iyz="1.82354616181052E-23"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link26.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link26.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint26"
+    type="revolute">
+    <origin
+      xyz="0.08 0.004 0"
+      rpy="0 0 0.65408" />
+    <parent
+      link="Link16" />
+    <child
+      link="Link26" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link311">
+    <inertial>
+      <origin
+        xyz="0.042 -8.404971579834E-09 0.0299999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896402" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="-2.16083694673982E-22"
+        ixz="-6.05605579279736E-06"
+        iyy="1.2540943263813E-05"
+        iyz="-4.82937209157512E-24"
+        izz="6.99727115654007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link311.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link311.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint311"
+    type="revolute">
+    <origin
+      xyz="0.02 0 -0.0088"
+      rpy="-1.5708 0.019302 0" />
+    <parent
+      link="Link26" />
+    <child
+      link="Link311" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="Link312">
+    <inertial>
+      <origin
+        xyz="0.042 -8.40497160758957E-09 0.0299999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0115483860896403" />
+      <inertia
+        ixx="5.72454936139627E-06"
+        ixy="4.34439916399174E-21"
+        ixz="-6.05605579279737E-06"
+        iyy="1.2540943263813E-05"
+        iyz="3.79121230959321E-21"
+        izz="6.99727115654009E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link312.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluebody-urdf/meshes/Link312.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint312"
+    type="revolute">
+    <origin
+      xyz="0.02 0 0.0088"
+      rpy="-1.5708 0.019302 0" />
+    <parent
+      link="Link26" />
+    <child
+      link="Link312" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+</robot>

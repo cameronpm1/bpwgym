@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="bluefeet-urdf">
+  <mujoco>
+        <compiler 
+        meshdir="../meshes/" 
+        balanceinertia="true" 
+        discardvisual="false" />
+  </mujoco>
+  <link
+    name="foot">
+    <inertial>
+      <origin
+        xyz="2.94540571336509E-15 -0.000485428158718312 0.00481121221112329"
+        rpy="0 0 0" />
+      <mass
+        value="0.0431626228283364" />
+      <inertia
+        ixx="9.2501772724804E-06"
+        ixy="-7.13979087059034E-21"
+        ixz="-9.94928950890282E-19"
+        iyy="3.41465292323659E-05"
+        iyz="2.10273541230202E-07"
+        izz="4.21467983924722E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fl1">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 1.04083408558608E-17 -3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079141" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="-5.50699764411937E-24"
+        ixz="-3.330273686942E-23"
+        iyy="2.69919583243165E-07"
+        iyz="5.6221076426108E-24"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fj1"
+    type="revolute">
+    <origin
+      xyz="0.025 -0.014 0.018"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="foot" />
+    <child
+      link="fl1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fl2">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 1.38777878078145E-17 9.10725272540198E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079142" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="1.76340876041553E-25"
+        ixz="1.50618263651043E-23"
+        iyy="2.69919583243166E-07"
+        iyz="-1.73283008985669E-23"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fj2"
+    type="revolute">
+    <origin
+      xyz="0 0.009 0.018"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="foot" />
+    <child
+      link="fl2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fl3">
+    <inertial>
+      <origin
+        xyz="0.011917746161099 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283590714079141" />
+      <inertia
+        ixx="1.58449114328455E-07"
+        ixy="4.98328391842494E-24"
+        ixz="-1.71479158624406E-23"
+        iyy="2.69919583243165E-07"
+        iyz="1.15355055036625E-23"
+        izz="1.38027104044294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bluefeet-urdf/meshes/fl3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fj3"
+    type="revolute">
+    <origin
+      xyz="-0.025 -0.014 0.018"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="foot" />
+    <child
+      link="fl3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

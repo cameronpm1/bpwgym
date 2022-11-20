@@ -1,0 +1,30 @@
+<mujoco model="bluefeet-urdf">
+  <compiler angle="radian" meshdir="../meshes/" autolimits="true"/>
+  <size/>
+  <default/>
+  <worldbody>
+  <body name="foot0" pos="0.04352 0 -0.24823" euler="0. 0. -1.57">
+    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="1 1 1 1" mesh="foot"/>
+    <geom type="mesh" rgba="1 1 1 1" mesh="foot"/>
+    <freejoint name="root1"/>
+    <body name="fl1" pos="0.025 -0.014 0.018" quat="0.499998 0.5 -0.5 0.500002">
+      <inertial pos="0.0119177 0 0" quat="0.707107 0 0 0.707107" mass="0.00283591" diaginertia="2.6992e-07 1.58449e-07 1.38027e-07"/>
+      <joint name="fj1" pos="0 0 0" axis="0 0 -1" range="-1.57 1.57"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="0.25098 0.25098 0.25098 1" mesh="fl1"/>
+      <geom type="mesh" rgba="0.25098 0.25098 0.25098 1" mesh="fl1"/>
+    </body>
+    <body name="fl2" pos="0 0.009 0.018" quat="0.707105 0 -0.707108 0">
+      <inertial pos="0.0119177 0 0" quat="0.707107 0 0 0.707107" mass="0.00283591" diaginertia="2.6992e-07 1.58449e-07 1.38027e-07"/>
+      <joint name="fj2" pos="0 0 0" axis="0 0 1" range="-1.57 1.57"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="0.25098 0.25098 0.25098 1" mesh="fl2"/>
+      <geom type="mesh" rgba="0.25098 0.25098 0.25098 1" mesh="fl2"/>
+    </body>
+    <body name="fl3" pos="-0.025 -0.014 0.018" quat="0.499998 0.5 -0.5 0.500002">
+      <inertial pos="0.0119177 0 0" quat="0.707107 0 0 0.707107" mass="0.00283591" diaginertia="2.6992e-07 1.58449e-07 1.38027e-07"/>
+      <joint name="fj3" pos="0 0 0" axis="0 0 1" range="-1.57 1.57"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="0.25098 0.25098 0.25098 1" mesh="fl3"/>
+      <geom type="mesh" rgba="0.25098 0.25098 0.25098 1" mesh="fl3"/>
+    </body>
+  </body>
+  </worldbody>
+</mujoco>
