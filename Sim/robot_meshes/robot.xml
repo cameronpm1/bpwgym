@@ -1,0 +1,167 @@
+<mujoco model="robot_urdf">
+    <compiler angle="radian" />
+    <size njmax="500" nconmax="100" />
+    <option timestep="0.001" gravity="0 0 -3" />
+    <asset>
+        <mesh name="floor" file="robot_meshes/floor.STL" />
+        <mesh name="body simple" file="robot_meshes/body simple.STL" />
+        <mesh name="left leg servos" file="robot_meshes/left leg servos.STL" />
+        <mesh name="upper front leg 0" file="robot_meshes/upper front leg 0.STL" />
+        <mesh name="lower front leg 0" file="robot_meshes/lower front leg 0.STL" />
+        <mesh name="foot 0" file="robot_meshes/foot 0.STL" />
+        <mesh name="center joint 0" file="robot_meshes/center joint 0.STL" />
+        <mesh name="upper support leg 0" file="robot_meshes/upper support leg 0.STL" />
+        <mesh name="lower support leg 0" file="robot_meshes/lower support leg 0.STL" />
+        <mesh name="back leg extension 0" file="robot_meshes/back leg extension 0.STL" />
+        <mesh name="back leg linkage 0" file="robot_meshes/back leg linkage 0.STL" />
+        <mesh name="right leg servos" file="robot_meshes/right leg servos.STL" />
+        <mesh name="upper front leg 1" file="robot_meshes/upper front leg 1.STL" />
+        <mesh name="lower front leg 1" file="robot_meshes/lower front leg 1.STL" />
+        <mesh name="foot 1" file="robot_meshes/foot 1.STL" />
+        <mesh name="center joint 1" file="robot_meshes/center link 1.STL" />
+        <mesh name="upper support leg 1" file="robot_meshes/upper support leg 1.STL" />
+        <mesh name="lower support leg 1" file="robot_meshes/lower support leg 1.STL" />
+        <mesh name="back leg extension 1" file="robot_meshes/back leg extension 1.STL" />
+        <mesh name="back leg linkage 1" file="robot_meshes/back leg linkage 1.STL" />
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".25 .25 .25" rgb2=".3 .3 .3" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
+    </asset>
+    <worldbody>
+        <geom name="floor" conaffinity="1" pos="0 0 0" size="3 3 1" type="plane" material="matplane" rgba="0.4 0.6 0.8 1"/>
+        <light directional="true" diffuse=".8 .8 .8" specular=".2 .2 .2" pos="0 0 10" dir="0 0 -1"/>
+        <body name="body" pos="0.0201691 0.0016367 0.213959">
+            <inertial pos="-0.018077 -0.0019638 -0.019122" quat="0.703376 0.710807 -0.00102033 0.0037802" mass="0.36224" diaginertia="0.000417035 0.000397256 0.000153599" />
+            <joint name="root" type="free" />
+            <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="body simple" />
+            <body name="left leg servos" pos="-0.0116 -0.03575 -0.05475">
+                <inertial pos="0.015202 0.0089519 -0.01757" quat="0.505104 0.45699 0.477784 0.554754" mass="0.046796" diaginertia="8.39897e-06 6.99558e-06 5.25574e-06" />
+                <joint name="joint00" pos="0 0 0" axis="1 0 0" />
+                <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="left leg servos" />
+                <body name="upper front leg 0" pos="0.0367 0.00648 -0.0248">
+                    <inertial pos="0.0029976 0.0024644 -0.016953" quat="0.996174 5.56013e-06 -0.0873898 1.32309e-06" mass="0.0082047" diaginertia="3.82275e-06 2.7035e-06 1.37005e-06" />
+                    <joint name="joint011" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="upper front leg 0" />
+                    <body name="lower front leg 0" pos="0.010969 0.001745 -0.062038">
+                        <inertial pos="-0.021664 -1.8792e-06 -0.019885" quat="2.41825e-05 0.413323 5.7604e-05 0.910584" mass="0.0090259" diaginertia="4.58993e-06 4.4985e-06 3.87474e-07" />
+                        <joint name="joint012" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower front leg 0" />
+                        <body name="foot 0" pos="-0.050992 0 -0.044987">
+                            <inertial pos="-0.0072307 -5.591e-10 -0.015677" quat="0 0.709444 0 0.704762" mass="0.0082111" diaginertia="2.02494e-06 1.5499e-06 1.21136e-06" />
+                            <joint name="joint014" pos="0 0 0" axis="0 1 0" />
+                            <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="foot 0" />
+                        </body>
+                    </body>
+                    <body name="center joint 0" pos="0.010969 0.001745 -0.062038">
+                        <inertial pos="-0.0047836 0 0" quat="0.5 0.5 0.5 0.5" mass="0.00033443" diaginertia="1.4009e-08 1.3107e-08 1.5922e-09" />
+                        <joint name="joint013" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="center joint 0" />
+                    </body>
+                </body>
+                <body name="upper support leg 0" pos="0.0217 0.00745 -0.0248">
+                    <inertial pos="-0.00094468 0.00081116 -0.030045" quat="0.989606 0.021369 -0.141964 0.00832049" mass="0.0026863" diaginertia="1.26583e-06 8.50118e-07 5.22722e-07" />
+                    <joint name="joint021" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="upper support leg 0" />
+                    <body name="lower support leg 0" pos="0.010969 0.00088 -0.062038">
+                        <inertial pos="-0.026064 -3.2454e-05 -0.017474" quat="0.66029 0.282896 0.295038 0.630032" mass="0.0016804" diaginertia="9.40754e-07 9.35753e-07 1.81728e-08" />
+                        <joint name="joint022" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower support leg 0" />
+                    </body>
+                </body>
+                <body name="back leg extension 0" pos="-0.0168 0.007725 -0.03125">
+                    <inertial pos="-0.010435 0.00087462 -0.0063671" quat="0.346105 0.346105 -0.616613 0.616613" mass="0.0067571" diaginertia="2.16089e-06 1.39161e-06 9.8355e-07" />
+                    <joint name="joint031" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="back leg extension 0" />
+                    <body name="back leg linkage 0" pos="-0.025609 0 -0.015626">
+                        <inertial pos="0.025007 -3.4905e-09 -0.034735" quat="0.951725 0 -0.306952 0" mass="0.005272" diaginertia="5.89246e-06 4.7612e-06 1.16924e-06" />
+                        <joint name="joint032" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="back leg linkage 0" />
+                    </body>
+                </body>
+            </body>
+            <body name="right leg servos" pos="-0.0116 0.03575 -0.05475">
+                <inertial pos="0.014979 -0.0087544 -0.017336" quat="0.551273 0.479156 0.453889 0.510385" mass="0.046731" diaginertia="8.37501e-06 6.96105e-06 5.23473e-06" />
+                <joint name="joint10" pos="0 0 0" axis="1 0 0" />
+                <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="right leg servos" />
+                <body name="upper front leg 1" pos="0.0367 -0.00822 -0.0248">
+                    <inertial pos="0.0030082 -0.00071947 -0.016951" quat="0.996147 -3.36167e-06 -0.0877028 -2.95968e-07" mass="0.0082047" diaginertia="3.82278e-06 2.7035e-06 1.37012e-06" />
+                    <joint name="joint111" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="upper front leg 1" />
+                    <body name="lower front leg 1" pos="-0.003992 9.1189e-05 -0.062031">
+                        <inertial pos="-0.0066712 -9.3068e-05 -0.019877" quat="2.41131e-05 0.413482 5.75814e-05 0.910512" mass="0.0090259" diaginertia="4.58997e-06 4.4985e-06 3.87529e-07" />
+                        <joint name="joint112" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower front leg 1" />
+                        <body name="foot 1" pos="-0.036008 -9.1189e-05 -0.044969">
+                            <inertial pos="-0.0072307 -5.591e-10 -0.015677" quat="0 0.709444 0 0.704762" mass="0.0082111" diaginertia="2.02494e-06 1.5499e-06 1.21136e-06" />
+                            <joint name="joint114" pos="0 0 0" axis="0 1 0" />
+                            <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="foot 1" />
+                        </body>
+                    </body>
+                    <body name="center joint 1" pos="0.011008 0 -0.062031">
+                        <inertial pos="-0.0047836 0 0" quat="0.5 0.5 0.5 0.5" mass="0.00033443" diaginertia="1.4009e-08 1.3107e-08 1.5922e-09" />
+                        <joint name="joint113" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="center joint 1" />
+                    </body>
+                </body>
+                <body name="upper support leg 1" pos="0.0217 -0.0074488 -0.0248">
+                    <inertial pos="-0.0009276 -0.0008066 -0.030037" quat="0.989565 -0.0214121 -0.142241 -0.00836864" mass="0.0026871" diaginertia="1.26598e-06 8.50201e-07 5.22604e-07" />
+                    <joint name="joint121" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="upper support leg 1" />
+                    <body name="lower support leg 1" pos="0.011008 -0.00568 -0.062031" quat="0.24994 -0.249944 0.66146 0.661459">
+                        <inertial pos="0.031105 0.0041392 0.0049675" quat="-0.0142651 0.706227 -0.0182811 0.707606" mass="0.0016804" diaginertia="9.40754e-07 9.35749e-07 1.81679e-08" />
+                        <joint name="joint122" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower support leg 1" />
+                    </body>
+                </body>
+                <body name="back leg extension 1" pos="-0.0168 -0.007725 -0.03125">
+                    <inertial pos="-0.010435 -0.00087462 -0.0063671" quat="0.346105 0.346105 -0.616613 0.616613" mass="0.0067571" diaginertia="2.16089e-06 1.39161e-06 9.8355e-07" />
+                    <joint name="joint131" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="back leg extension 1" />
+                    <body name="back leg linkage 1" pos="-0.025609 0 -0.015626">
+                        <inertial pos="0.02502 -3.4905e-09 -0.034726" quat="0.951667 0 -0.30713 0" mass="0.005272" diaginertia="5.89239e-06 4.7612e-06 1.16931e-06" />
+                        <joint name="joint132" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="back leg linkage 1" />
+                    </body>
+                </body>
+            </body>
+        </body>
+        
+    </worldbody>
+    
+    <contact>
+        <exclude body1="lower support leg 1" body2="foot 1"/>
+        <exclude body1="back leg linkage 1" body2="foot 1"/>
+        <exclude body1="center joint 1" body2="upper support leg 1"/>
+        <exclude body1="center joint 1" body2="lower support leg 1"/>
+        <exclude body1="center joint 1" body2="upper front leg 1"/>
+        <exclude body1="back leg linkage 1" body2="lower front leg 1"/>
+        <exclude body1="back leg linkage 1" body2="lower support leg 1"/>
+        <exclude body1="lower support leg 0" body2="foot 0"/>
+        <exclude body1="back leg linkage 0" body2="foot 0"/>
+        <exclude body1="center joint 0" body2="upper support leg 0"/>
+        <exclude body1="center joint 0" body2="lower support leg 0"/>
+        <exclude body1="back leg linkage 0" body2="lower front leg 0"/>
+        <exclude body1="back leg linkage 0" body2="lower support leg 0"/>
+        <exclude body1="center joint 0" body2="upper front leg 0"/>
+    </contact>
+    
+    <equality> 
+        <connect anchor="0.0187721  -0.02763633  0.039309" body1="back leg linkage 0" body2="lower front leg 0" name="eq constr 01" solref="0.0002 1"/>
+        <connect anchor="0.0412771  -0.02763633  0.072409" body1="center joint 0" body2="upper support leg 0" name="eq constr 02" solref="0.0002 1"/>
+        <connect anchor="-0.0464309 -0.03411633 0.052209" body1="foot 0" body2="lower support leg 0" name="eq constr 03" solref="0.0002 1"/>
+        <connect anchor="0.0187721  0.02916367  0.039309" body1="back leg linkage 1" body2="lower front leg 1" name="eq constr 11" solref="0.0002 1"/>
+        <connect anchor="0.0412771  0.02916367  0.072409" body1="center joint 1" body2="upper support leg 1" name="eq constr 12" solref="0.0002 1"/>
+        <connect anchor="-0.0464309 0.02916367 0.052209" body1="foot 1" body2="lower support leg 1" name="eq constr 13" solref="0.0002 1"/>
+    </equality>
+    
+    <actuator>
+        <position name="joint011"   gear="2"  joint="joint011"/>
+        <position name="joint013"   gear="2"  joint="joint013"/>
+        <position name="joint00"   gear="2"  joint="joint00"/>
+        <position name="joint111"   gear="2"  joint="joint111"/>
+        <position name="joint113"   gear="2"  joint="joint113"/>
+        <position name="joint10"   gear="2"  joint="joint10"/>
+        <position name="joint012"   gear="2"  joint="joint012"/>
+        <position name="joint112"   gear="2"  joint="joint112"/>
+        <position name="joint032"   gear="2"  joint="joint032"/>
+  </actuator>
+</mujoco>

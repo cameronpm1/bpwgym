@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_urdf">
+  <link
+    name="floor">
+    <inertial>
+      <origin
+        xyz="-0.00772347458784148 -0.000886232164305736 -0.00099526485985825"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia
+        ixx="1.66733395958593E-05"
+        ixy="-5.3244436992654E-22"
+        ixz="1.0214384144461E-08"
+        iyy="1.66733333333333E-05"
+        iyz="-7.56841828139423E-21"
+        izz="3.33333270708073E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/floor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/floor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="-0.018077 -0.0019638 -0.019122"
+        rpy="0 0 0" />
+      <mass
+        value="0.36224" />-0.018077 -0.0019638 -0.019122
+      <inertia
+        ixx="0.00041703"
+        ixy="1.0361E-06"
+        ixz="1.4475E-07"
+        iyy="0.00015363"
+        iyz="-2.5565E-06"
+        izz="0.00039723" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/body simple.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/body simple.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="root"
+    type="floating">
+    <origin
+      xyz="0.0201691382826545 0.00163367219466344 0.213958929455746"
+      rpy="0 0 0" />
+    <parent
+      link="floor" />
+    <child
+      link="body" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left leg servos">
+    <inertial>
+      <origin
+        xyz="0.015202 0.0089519 -0.01757"
+        rpy="0 0 0" />
+      <mass
+        value="0.046796" />
+      <inertia
+        ixx="5.2987E-06"
+        ixy="-2.187E-07"
+        ixz="-2.1902E-07"
+        iyy="8.3827E-06"
+        iyz="1.9128E-08"
+        izz="6.9689E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/left leg servos.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/left leg servos.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint00"
+    type="revolute">
+    <origin
+      xyz="-0.0116 -0.03575 -0.05475"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="left leg servos" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper front leg 0">
+    <inertial>
+      <origin
+        xyz="0.0029976 0.0024644 -0.016953"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082047" />
+      <inertia
+        ixx="3.7484E-06"
+        ixy="-7.912E-13"
+        ixz="4.2052E-07"
+        iyy="2.7035E-06"
+        iyz="1.5174E-11"
+        izz="1.4444E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper front leg 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper front leg 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint011"
+    type="revolute">
+    <origin
+      xyz="0.0367 0.00648 -0.0248"
+      rpy="0 0 0" />
+    <parent
+      link="left leg servos" />
+    <child
+      link="upper front leg 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower front leg 0">
+    <inertial>
+      <origin
+        xyz="-0.021664 -1.8792E-06 -0.019885"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090259" />
+      <inertia
+        ixx="2.2088E-06"
+        ixy="-2.6829E-10"
+        ixz="-2.0825E-06"
+        iyy="4.4985E-06"
+        iyz="-2.2351E-10"
+        izz="2.7686E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower front leg 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower front leg 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint012"
+    type="revolute">
+    <origin
+      xyz="0.010969 0.001745 -0.062038"
+      rpy="0 0 0" />
+    <parent
+      link="upper front leg 0" />
+    <child
+      link="lower front leg 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="foot 0">
+    <inertial>
+      <origin
+        xyz="-0.0072307 -5.591E-10 -0.015677"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082111" />
+      <inertia
+        ixx="1.2114E-06"
+        ixy="6.9692E-14"
+        ixz="5.3873E-09"
+        iyy="1.5499E-06"
+        iyz="3.6042E-14"
+        izz="2.0249E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/foot 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/foot 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint014"
+    type="revolute">
+    <origin
+      xyz="-0.050992 0 -0.044987"
+      rpy="0 0 0" />
+    <parent
+      link="lower front leg 0" />
+    <child
+      link="foot 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="center joint 0">
+    <inertial>
+      <origin
+        xyz="-0.0047836 -1.3878E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00033443" />
+      <inertia
+        ixx="1.5922E-09"
+        ixy="5.2326E-25"
+        ixz="-6.862E-24"
+        iyy="1.4009E-08"
+        iyz="3.1017E-25"
+        izz="1.3107E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/center joint 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/center joint 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint013"
+    type="revolute">
+    <origin
+      xyz="0.010969 0.001745 -0.062038"
+      rpy="0 0 0" />
+    <parent
+      link="upper front leg 0" />
+    <child
+      link="center joint 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper support leg 0">
+    <inertial>
+      <origin
+        xyz="-0.00094468 0.00081116 -0.030045"
+        rpy="0 0 0" />
+      <mass
+        value="0.0026863" />
+      <inertia
+        ixx="1.2071E-06"
+        ixy="4.6076E-11"
+        ixz="2.0031E-07"
+        iyy="8.4951E-07"
+        iyz="1.5234E-08"
+        izz="5.8206E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper support leg 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper support leg 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint021"
+    type="revolute">
+    <origin
+      xyz="0.0217 0.00745 -0.0248"
+      rpy="0 0 0" />
+    <parent
+      link="left leg servos" />
+    <child
+      link="upper support leg 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower support leg 0">
+    <inertial>
+      <origin
+        xyz="-0.026064 -3.2454E-05 -0.017474"
+        rpy="0 0 0" />
+      <mass
+        value="0.0016804" />
+      <inertia
+        ixx="4.2499E-07"
+        ixy="1.4058E-09"
+        ixz="-4.5584E-07"
+        iyy="9.4074E-07"
+        iyz="9.4625E-10"
+        izz="5.2895E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower support leg 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower support leg 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint022"
+    type="revolute">
+    <origin
+      xyz="0.010969 0.00088 -0.062038"
+      rpy="0 0 0" />
+    <parent
+      link="upper support leg 0" />
+    <child
+      link="lower support leg 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back leg extension 0">
+    <inertial>
+      <origin
+        xyz="-0.010435 0.00087462 -0.0063671"
+        rpy="0 0 0" />
+      <mass
+        value="0.0067571" />
+      <inertia
+        ixx="1.6003E-06"
+        ixy="1.9874E-13"
+        ixz="-3.4204E-07"
+        iyy="9.8355E-07"
+        iyz="-6.9253E-14"
+        izz="1.9522E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg extension 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg extension 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint031"
+    type="revolute">
+    <origin
+      xyz="-0.0168 0.007725 -0.03125"
+      rpy="0 0 0" />
+    <parent
+      link="left leg servos" />
+    <child
+      link="back leg extension 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back leg linkage 0">
+    <inertial>
+      <origin
+        xyz="0.025007 -3.4905E-09 -0.034735"
+        rpy="0 0 0" />
+      <mass
+        value="0.005272" />
+      <inertia
+        ixx="4.2801E-06"
+        ixy="-8.1663E-13"
+        ixz="2.2396E-06"
+        iyy="4.7612E-06"
+        iyz="2.3677E-14"
+        izz="2.7816E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg linkage 0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg linkage 0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint032"
+    type="revolute">
+    <origin
+      xyz="-0.025609 0 -0.015626"
+      rpy="0 0 0" />
+    <parent
+      link="back leg extension 0" />
+    <child
+      link="back leg linkage 0" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right leg servos">
+    <inertial>
+      <origin
+        xyz="0.014979 -0.0087544 -0.017336"
+        rpy="0 0 0" />
+      <mass
+        value="0.046731" />
+      <inertia
+        ixx="5.277E-06"
+        ixy="2.0549E-07"
+        ixz="-2.2108E-07"
+        iyy="8.3612E-06"
+        iyz="-1.5309E-09"
+        izz="6.9326E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/right leg servos.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/right leg servos.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint10"
+    type="revolute">
+    <origin
+      xyz="-0.0116 0.03575 -0.05475"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="right leg servos" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper front leg 1">
+    <inertial>
+      <origin
+        xyz="0.0030082 -0.00071947 -0.016951"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082047" />
+      <inertia
+        ixx="3.7479E-06"
+        ixy="2.6833E-12"
+        ixz="4.2196E-07"
+        iyy="2.7035E-06"
+        iyz="-8.6639E-12"
+        izz="1.445E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper front leg 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper front leg 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint111"
+    type="revolute">
+    <origin
+      xyz="0.0367 -0.00822 -0.0248"
+      rpy="0 0 0" />
+    <parent
+      link="right leg servos" />
+    <child
+      link="upper front leg 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower front leg 1">
+    <inertial>
+      <origin
+        xyz="-0.0066712 -9.3068E-05 -0.019877"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090259" />
+      <inertia
+        ixx="2.2074E-06"
+        ixy="-2.6836E-10"
+        ixz="-2.0823E-06"
+        iyy="4.4985E-06"
+        iyz="-2.2342E-10"
+        izz="2.7701E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower front leg 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower front leg 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint112"
+    type="revolute">
+    <origin
+      xyz="-0.003992 9.1189E-05 -0.062031"
+      rpy="0 0 0" />
+    <parent
+      link="upper front leg 1" />
+    <child
+      link="lower front leg 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="foot 1">
+    <inertial>
+      <origin
+        xyz="-0.0072307 -5.591E-10 -0.015677"
+        rpy="0 0 0" />
+      <mass
+        value="0.0082111" />
+      <inertia
+        ixx="1.2114E-06"
+        ixy="6.9692E-14"
+        ixz="5.3873E-09"
+        iyy="1.5499E-06"
+        iyz="3.6042E-14"
+        izz="2.0249E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/foot 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/foot 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint114"
+    type="revolute">
+    <origin
+      xyz="-0.036008 -9.1189E-05 -0.044969"
+      rpy="0 0 0" />
+    <parent
+      link="lower front leg 1" />
+    <child
+      link="foot 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="center link 1">
+    <inertial>
+      <origin
+        xyz="-0.0047836 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00033443" />
+      <inertia
+        ixx="1.5922E-09"
+        ixy="5.1285E-25"
+        ixz="-5.8274E-24"
+        iyy="1.4009E-08"
+        iyz="1.0458E-25"
+        izz="1.3107E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/center link 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/center link 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint113"
+    type="revolute">
+    <origin
+      xyz="0.011008 0 -0.062031"
+      rpy="0 0 0" />
+    <parent
+      link="upper front leg 1" />
+    <child
+      link="center link 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper support leg 1">
+    <inertial>
+      <origin
+        xyz="-0.0009276 -0.0008066 -0.030037"
+        rpy="0 0 0" />
+      <mass
+        value="0.0026871" />
+      <inertia
+        ixx="1.207E-06"
+        ixy="-5.4465E-11"
+        ixz="2.0073E-07"
+        iyy="8.4959E-07"
+        iyz="-1.5283E-08"
+        izz="5.8219E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper support leg 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/upper support leg 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint121"
+    type="revolute">
+    <origin
+      xyz="0.0217 -0.0074488 -0.0248"
+      rpy="0 0 0" />
+    <parent
+      link="right leg servos" />
+    <child
+      link="upper support leg 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower support leg 1">
+    <inertial>
+      <origin
+        xyz="0.031105 0.0041392 0.0049675"
+        rpy="0 0 0" />
+      <mass
+        value="0.0016804" />
+      <inertia
+        ixx="1.8201E-08"
+        ixy="5.2511E-09"
+        ixz="-1.6802E-09"
+        iyy="9.3573E-07"
+        iyz="-2.2044E-10"
+        izz="9.4074E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower support leg 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/lower support leg 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint122"
+    type="revolute">
+    <origin
+      xyz="0.011008 -0.00568 -0.062031"
+      rpy="1.5708 0.72256 3.1416" />
+    <parent
+      link="upper support leg 1" />
+    <child
+      link="lower support leg 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back leg extension 1">
+    <inertial>
+      <origin
+        xyz="-0.010435 -0.00087462 -0.0063671"
+        rpy="0 0 0" />
+      <mass
+        value="0.0067571" />
+      <inertia
+        ixx="1.6003E-06"
+        ixy="-5.8369E-14"
+        ixz="-3.4204E-07"
+        iyy="9.8355E-07"
+        iyz="-2.2613E-13"
+        izz="1.9522E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg extension 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg extension 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint131"
+    type="revolute">
+    <origin
+      xyz="-0.0168 -0.007725 -0.03125"
+      rpy="0 0 0" />
+    <parent
+      link="right leg servos" />
+    <child
+      link="back leg extension 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back leg linkage 1">
+    <inertial>
+      <origin
+        xyz="0.02502 -3.4905E-09 -0.034726"
+        rpy="0 0 0" />
+      <mass
+        value="0.005272" />
+      <inertia
+        ixx="4.2784E-06"
+        ixy="-8.1664E-13"
+        ixz="2.2401E-06"
+        iyy="4.7612E-06"
+        iyz="2.3369E-14"
+        izz="2.7833E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg linkage 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/ubuntu/robot/robot_meshes/back leg linkage 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint132"
+    type="revolute">
+    <origin
+      xyz="-0.025609 0 -0.015626"
+      rpy="0 0 0" />
+    <parent
+      link="back leg extension 1" />
+    <child
+      link="back leg linkage 1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

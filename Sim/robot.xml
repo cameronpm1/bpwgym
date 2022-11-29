@@ -3,7 +3,6 @@
     <size njmax="500" nconmax="100" />
     <option timestep="0.001" gravity="0 0 -3" />
     <asset>
-        <mesh name="floor" file="robot_meshes/floor.STL" />
         <mesh name="body simple" file="robot_meshes/body simple.STL" />
         <mesh name="left leg servos" file="robot_meshes/left leg servos.STL" />
         <mesh name="upper front leg 0" file="robot_meshes/upper front leg 0.STL" />
@@ -106,10 +105,10 @@
                     <inertial pos="-0.0009276 -0.0008066 -0.030037" quat="0.989565 -0.0214121 -0.142241 -0.00836864" mass="0.0026871" diaginertia="1.26598e-06 8.50201e-07 5.22604e-07" />
                     <joint type="hinge" name="joint121" pos="0 0 0" axis="0 1 0" />
                     <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="upper support leg 1" />
-                    <body name="lower support leg 1" pos="0.011008 -0.00568 -0.062031" quat="0.24994 -0.249944 0.66146 0.661459">
-                        <inertial pos="0.031105 0.0041392 0.0049675" quat="-0.0142651 0.706227 -0.0182811 0.707606" mass="0.0016804" diaginertia="9.40754e-07 9.35749e-07 1.81679e-08" />
+                    <body name="lower support leg 1" pos="0.010969 0.00088 -0.062038">
+                        <inertial pos="-0.026064 -3.2454e-05 -0.017474" quat="0.66029 0.282896 0.295038 0.630032" mass="0.0016804" diaginertia="9.40754e-07 9.35753e-07 1.81728e-08" />
                         <joint type="hinge" name="joint122" pos="0 0 0" axis="0 1 0" />
-                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower support leg 1" />
+                        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="lower support leg 0" />
                     </body>
                 </body>
                 <body name="back leg extension 1" pos="-0.0168 -0.007725 -0.03125">
@@ -129,11 +128,13 @@
     
     <contact>
         <exclude body1="lower support leg 1" body2="foot 1"/>
+        <exclude body1="back leg linkage 1" body2="foot 1"/>
         <exclude body1="center joint 1" body2="upper support leg 1"/>
         <exclude body1="center joint 1" body2="lower support leg 1"/>
         <exclude body1="back leg linkage 1" body2="lower front leg 1"/>
         <exclude body1="back leg linkage 1" body2="lower support leg 1"/>
         <exclude body1="lower support leg 0" body2="foot 0"/>
+        <exclude body1="back leg linkage 0" body2="foot 0"/>
         <exclude body1="center joint 0" body2="upper support leg 0"/>
         <exclude body1="center joint 0" body2="lower support leg 0"/>
         <exclude body1="back leg linkage 0" body2="lower front leg 0"/>
@@ -145,12 +146,12 @@
     </contact>
     
     <equality> 
-        <connect anchor="0.0187721  -0.02763633  0.039309" body1="back leg linkage 0" body2="lower front leg 0" name="eq constr 01" solref="0.0002 1"/>
+        <connect anchor="0.0187721  -0.02763633  0.039309" body1="back leg linkage 0" body2="lower front leg 0" name="eq constr 01" solref="0.1 1"/>
         <connect anchor="0.0412771  -0.02763633  0.072409" body1="center joint 0" body2="upper support leg 0" name="eq constr 02" solref="0.0002 1"/>
-        <connect anchor="-0.0464309 -0.03411633 0.052209" body1="foot 0" body2="lower support leg 0" name="eq constr 03" solref="0.0002 1"/>
-        <connect anchor="0.0187721  0.02916367  0.039309" body1="back leg linkage 1" body2="lower front leg 1" name="eq constr 11" solref="0.0002 1"/>
+        <connect anchor="-0.0464309 -0.03411633 0.052209" body1="foot 0" body2="lower support leg 0" name="eq constr 03" solref="0.01 1"/>
+        <connect anchor="0.0187721  0.02916367  0.039309" body1="back leg linkage 1" body2="lower front leg 1" name="eq constr 11" solref="0.1 1"/>
         <connect anchor="0.0412771  0.02916367  0.072409" body1="center joint 1" body2="upper support leg 1" name="eq constr 12" solref="0.0002 1"/>
-        <connect anchor="-0.0464309 0.02916367 0.052209" body1="foot 1" body2="lower support leg 1" name="eq constr 13" solref="0.0002 1"/>
+        <connect anchor="-0.0464309 0.02916367 0.052209" body1="foot 1" body2="lower support leg 1" name="eq constr 13" solref="0.01 1"/>
     </equality>
     
     <actuator>
@@ -162,6 +163,13 @@
         <position name="joint10"   gear="1"  joint="joint10"/>
         <position name="joint021"   gear="1"  joint="joint021"/>
         <position name="joint121"   gear="1"  joint="joint121"/>
-        
+        <position name="joint012"   gear="1"  joint="joint012"/>
+        <position name="joint112"   gear="1"  joint="joint112"/>
+        <position name="joint032"   gear="1"  joint="joint032"/>
+        <position name="joint132"   gear="1"  joint="joint132"/>
+        <position name="joint022"   gear="1"  joint="joint022"/>
+        <position name="joint122"   gear="1"  joint="joint122"/>
+        <position name="joint014"   gear="1"  joint="joint014"/>
+        <position name="joint114"   gear="1"  joint="joint114"/>
   </actuator>
 </mujoco>

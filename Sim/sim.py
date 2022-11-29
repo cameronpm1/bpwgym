@@ -50,6 +50,7 @@ class Sim:
         self._button_right = False
         self._lastx = 0
         self._lasty = 0
+        self._screen_set = False
 
     def dt(self) -> None:
         """Return simulation timestep"""
@@ -78,7 +79,6 @@ class Sim:
 
     def reset(self):
         mj.mj_resetData(self._model, self._initial_state)
-        return self.get_state()
 
     def set_state(self,
         joints: int,
@@ -118,7 +118,6 @@ class Sim:
         if self._state is None:
             print('Error: state has not been set')
             quit()
-        #self.set_data()
         for label in self._labels.keys():
             for i,indx in enumerate(self._labels[label][0]):
                 self._state[label]['qpos'][i] = self._data.qpos[indx]
@@ -135,7 +134,12 @@ class Sim:
     '''
 
     def render(self):
+        if self._screen_set is False:
+            self.set_up_screen()
+            self._screen_set = True
+
         if glfw.window_should_close(self._window):
+            self._screen_set = False
             self.terminate()
             quit()
 
@@ -245,13 +249,13 @@ class Sim:
         glfw.terminate()
 
 def main():
-    sim = Sim('/home/ubuntu/robot/robot.xml',0.05)
-    print(sim._model.joint('joint011'))
+    sim = Sim('/home/ubuntu/robot/Sim/robot.xml',0.05)
+    #print(sim._model.joint('joint011'))
     #sim.set_state(19)
     #print(sim.get_state())
     i=0
-    sim.set_up_screen()
     while i < 500:
+        #sim.set_ctrl([0,0,0,0,0,0,0,0])
         sim.step()
         sim.render()
     sim.terminate()
