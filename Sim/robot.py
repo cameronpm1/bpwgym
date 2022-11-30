@@ -36,6 +36,8 @@ class Robot(Sim):
         self.knee_off = 1.0238628616194603
         self.support_off = 1.8096838437102432
         self.foot_off = 0.6190878380815508
+        
+        self.reset()
 
     def set_state(self) -> dict:
         state = super().set_state(joints=len(self.jnames), jnames=self.jnames)
@@ -106,7 +108,6 @@ class Robot(Sim):
         ctrl.append(angles['joint112']['qpos'])
         ctrl.append(angles['joint014']['qpos'])
         ctrl.append(angles['joint114']['qpos'])
-        print(angles['joint012']['qpos'])
         self.set_ctrl(ctrl)
         super().step()
         self.get_state()
@@ -114,6 +115,11 @@ class Robot(Sim):
     def check_state(self,
         angles: dict,
     ):
+        angles = angles.copy()
+        for key in angles.keys():
+            if 'joint' in key:
+                temp = angles[key]
+                angles[key] = {'qpos' : temp[0], 'qvel' : temp[1]}
         if self.check_angles(angles):
             return True,None
         if self.check_fall():
@@ -123,6 +129,10 @@ class Robot(Sim):
             return True,None
         else:
             return False,pos
+            
+
+                
+                
 
     def check_angles(self,
         angles: dict,
@@ -234,16 +244,3 @@ class Robot(Sim):
         return angle
         
 
-def main():
-    robot = Robot('/home/ubuntu/robot/Sim/robot.xml',0.05)
-    i=0
-    print(robot.foot_pos(-79.937,-158.61))
-    #print(robot.rel_to_sim({'joint011': -79.937, 'joint031': -148.61, 'joint00': -90.0, 'joint111': -79.937, 'joint131': -148.61, 'joint10': -90.0}))
-    #robot.set_state()
-    #while i < 500:
-    #    robot.step({'joint011':{'qpos':i},'joint031':{'qpos':0},'joint00':{'qpos':0},'joint111':{'qpos':0},'joint131':{'qpos':0},'joint10':{'qpos':0}})
-    #    robot.render()
-    #robot.terminate()
-
-if __name__ == "__main__":
-    main()

@@ -52,6 +52,7 @@ class Sim:
         self._lasty = 0
         self._screen_set = False
 
+
     def dt(self) -> None:
         """Return simulation timestep"""
         return self._model.opt.timestep 
@@ -248,17 +249,4 @@ class Sim:
     def terminate(self):
         glfw.terminate()
 
-def main():
-    sim = Sim('/home/ubuntu/robot/Sim/robot.xml',0.05)
-    #print(sim._model.joint('joint011'))
-    #sim.set_state(19)
-    #print(sim.get_state())
-    i=0
-    while i < 500:
-        #sim.set_ctrl([0,0,0,0,0,0,0,0])
-        sim.step()
-        sim.render()
-    sim.terminate()
 
-if __name__ == "__main__":
-    main()

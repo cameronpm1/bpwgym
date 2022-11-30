@@ -39,6 +39,7 @@ class BPWEnv(gym.Env):
         self._step = 0
         self._obs = None
         self.action = None
+        
 
     @property
     def action_dim(self) -> int:
@@ -47,22 +48,19 @@ class BPWEnv(gym.Env):
 
     @property
     def action_space(self) -> gym.Space:
-
         return spaces.Box(low=-1, high=1, shape=(self.action_dim,), dtype=np.float32)
 
     @property
     def observation_space(self) -> spaces.Dict:
         """Observation space
 
-        Return the observation space consisting of hand, object and
-        contact information
+        Return the observation space 
 
         """
         obs = self._get_obs()
         space = {}
         for key, val in obs.items():
             space[key] = spaces.Box(low=-np.inf, high=np.inf, shape=val.shape)
-
         return spaces.Dict(space)
 
     def reset(self):
@@ -71,7 +69,7 @@ class BPWEnv(gym.Env):
         self._obs = self._get_obs()
         self.action = []
         for i,joint in enumerate(self.sim.servos):
-            self.action.append(self._obs[joint]['qpos'])
+            self.action.append(self._obs[joint][0])
         return self._obs
 
     def render(self):
@@ -86,7 +84,7 @@ class BPWEnv(gym.Env):
 
         # Seed environment components with randomness
         seeds = [seed]
-        seeds.extend(self.sim.seed(seed))
+
 
         return seeds
 
@@ -100,6 +98,7 @@ class BPWEnv(gym.Env):
         self.sim.step(sim_angles)
         self._obs = self._get_obs()
         self._step += 1
+        done = False
         if self._step > self.max_episode_length:
             done = True
         rew = self._reward()
@@ -121,39 +120,16 @@ class BPWEnv(gym.Env):
         obs = OrderedDict()
 
         # Hand
-        obs['joint011'] = data['joint011'].copy()
-        obs['joint031'] = data['joint031'].copy()
-        obs['joint00'] = data['joint00'].copy()
-        obs['joint111'] = data['joint111'].copy()
-        obs['joint131'] = data['joint131'].copy()
-        obs['joint10'] = data['joint10'].copy()
-        obs['vel'] = self.sim._state['vel'].copy()
-        
+        obs['joint011'] = np.array([data['joint011']['qpos'],data['joint011']['qvel']])
+        obs['joint031'] = np.array([data['joint031']['qpos'],data['joint031']['qvel']])
+        obs['joint00'] = np.array([data['joint00']['qpos'],data['joint00']['qvel']])
+        obs['joint111'] = np.array([data['joint111']['qpos'],data['joint111']['qvel']])
+        obs['joint131'] = np.array([data['joint131']['qpos'],data['joint131']['qvel']])
+        obs['joint10'] = np.array([data['joint10']['qpos'],data['joint10']['qvel']])
+        obs['vel'] = np.array([self.sim._state['vel']])
         return obs
 
     def _reward(self):
         return 0.0
 
-def main():
-    robot1 = Robot('/home/ubuntu/robot/Sim/robot.xml',0.05)
-    env = BPWEnv(robot1,0.5)
-    #[-79.937, -148.61, -90.0, -79.937, -148.61, -90.0]
-    i=0
-    obs = env.reset()
-    done = False
-    
-    while i < 5000:
-        if i == 0: time.sleep(1)
-        env.render()
-        if i > 100 and i < 240:
-            obs, rew, done, info = env.step([0,0.15,0,0,0.15,0])
-            
-        else:
-            obs, rew, done, info = env.step([0,0,0,0,0,0])
-        #print(env.sim._state['joint032']['qpos'])
-        print(env.sim._state['joint012']['qpos'])
-        time.sleep(0.0001)
-        i += 1
 
-if __name__ == "__main__":
-    main()

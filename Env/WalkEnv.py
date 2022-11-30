@@ -11,9 +11,9 @@ from gym import spaces
 from gym.utils import seeding
 from Sim.robot import Robot
 
-from Env import BPWEnv
+from Env.bpwenv import BPWEnv
 
-class ReorientEnv(BPWEnv):
+class WalkEnv(BPWEnv):
 
     """Environment for running task"""
 
@@ -23,22 +23,13 @@ class ReorientEnv(BPWEnv):
         rew_clip_range=(0, 2),
         **kwargs
     ):
-        """
-        Args:
-            axis: desired axis of rotation
-            min_num_contacts: minimum number of contacts to provide reward
-                rotation about desired axis
-            max_tilt: maximum tilt about desired axis
-            rew_clip_range: reward clipping to avoid idiosyncratic behaviors
 
-        """
         super().__init__(**kwargs)
         self._rew_clip_range = rew_clip_range
         self._np_random = dict(axis=np.random.default_rng())
-        self._reset_goal_axis()
 
     def _reward(self):
-        vel = self._obs['vel']
+        vel = self._obs['vel'][0]
         return np.clip(vel, *self._rew_clip_range)
 
     def step(self, action):

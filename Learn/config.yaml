@@ -1,0 +1,38 @@
+seed: 91236
+
+hydra:
+  job:
+    name: running
+  run:
+    dir: outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+
+algo:
+  nenv: 8
+  pi: [256, 256]
+  qf: [256, 256]
+  lr: 0.0001
+  learning_starts: 1e5
+  batch_size: 256
+  tau: 0.005
+  gamma: 0.99
+  train_freq: 1
+  gradient_steps: 1
+  action_noise_std: 0.5
+  ent_coef: "auto"
+  target_update_interval: 1
+  device: cpu
+  total_timesteps: 2
+
+sim:
+  dir: /home/ubuntu/robot/Sim/robot.xml
+  dt: 0.05
+
+
+env:
+  step_duration: 0.05
+  max_episode_length: 2048
+  action_scale: 0.4
+
+
+
+
