@@ -1,4 +1,4 @@
-""" Module implements IHMEnv - the base class for in-hand manipulation"""
+"""base class for Bipedal Walker"""
 import multiprocessing as mp
 import pickle
 from collections import OrderedDict
@@ -13,7 +13,7 @@ from Sim.robot import Robot
 
 
 class BPWEnv(gym.Env):
-    """Environment for in-hand manipulation"""
+    """Environment for Bipedal Walkers"""
 
     def __init__(
         self,
@@ -100,7 +100,6 @@ class BPWEnv(gym.Env):
         self.sim.step(sim_angles)
         self._obs = self._get_obs()
         self._step += 1
-        done,pos = self.sim.check_state(self._obs)
         if self._step > self.max_episode_length:
             done = True
         rew = self._reward()
