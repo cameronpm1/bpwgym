@@ -21,7 +21,7 @@ algo:
   ent_coef: "auto"
   target_update_interval: 1
   device: cpu
-  total_timesteps: 2
+  total_timesteps: 1000
 
 sim:
   dir: /home/ubuntu/robot/Sim/robot.xml

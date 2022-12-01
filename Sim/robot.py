@@ -41,13 +41,13 @@ class Robot(Sim):
 
     def set_state(self) -> dict:
         state = super().set_state(joints=len(self.jnames), jnames=self.jnames)
-        self._state['vel'] = np.sqrt(state['root']['qvel'][0]**2+state['root']['qvel'][1]**2)
+        self._state['vel'] = state['root']['qvel'][0]
         return self._state
 
     
     def get_state(self) -> dict:
         state = super().get_state()
-        self._state['vel'] = np.sqrt(state['root']['qvel'][0]**2+state['root']['qvel'][1]**2)
+        self._state['vel'] = state['root']['qvel'][0]
         return self._state
 
     def reset(self):

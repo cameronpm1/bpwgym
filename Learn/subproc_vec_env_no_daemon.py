@@ -1,6 +1,7 @@
 """
 A variant of the SubprocVecEnv that uses a shared queue between the workers to
 get environment initial states for reset.
+Sourced from Gagan Khandate
 """
 
 import multiprocessing as mp
