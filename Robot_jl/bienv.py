@@ -5,13 +5,6 @@ import numpy as np
 from Sim.sim import Sim
 import matplotlib.pyplot as plt
 from biped import matrix_to_RPY, para_period
-# import os
-# import time
-# from stable_baselines3.common.utils import set_random_seed
-# from vec_env_utils import make_vec_env
-# from robot import Robot
-# from arm_dynamics import ArmDynamics
-# from stable_baselines3 import PPO
 
 
 class BipEnv(gym.Env):
@@ -33,7 +26,24 @@ class BipEnv(gym.Env):
         self.site_pos = self.robot._data.site_xpos
         self.site_ori = self.robot._data.site_xmat
         self.n_step = 0
-        self.epoch_p = 20
+        self.epoch_p = 5
+
+    @property
+    def action_space(self) -> gym.Space:
+        return spaces.Box(low=0, high=1, shape=(18,), dtype=np.float32)
+
+    @property
+    def observation_space(self) -> spaces.Dict:
+        """Observation space
+
+        Return the observation space
+
+        """
+        obs = self.get_obs()
+        space = {}
+        for key, val in obs.items():
+            space[key] = spaces.Box(low=-np.inf, high=np.inf, shape=val.shape)
+        return spaces.Dict(space)
 
     # For repeatable stochasticity
     def seed(self, seed=None):
@@ -56,6 +66,7 @@ class BipEnv(gym.Env):
 
     def step(self, action):
         # Periodicity
+        action = action.reshape(3, 6)
         self.n_step += 1
         period_a = para_period(para=action)
         for sid in range(self.period):
@@ -69,9 +80,9 @@ class BipEnv(gym.Env):
         reward = self.get_reward()
         done = False
         rpy = obs["rpy"]
-        print(rpy)
+        # print(rpy)
         if abs(rpy[0]) > 0.6 or abs(rpy[1]) > 0.6:
-            print("Turn over")
+            # print("Turn over")
             done = True
 
         if self.n_step == self.epoch_p:
@@ -86,7 +97,8 @@ if __name__ == "__main__":
     env.render_flag = True
     done_flag = False
     for _ in range(100):
-        a = np.random.rand(3, 6)
+        a = np.random.rand(18)
+        # a = a.reshape(3, 6)
         print("--------")
         while not done_flag:
             obs, rew, done_flag, _ = env.step(action=a)
