@@ -54,7 +54,8 @@
     <!-- <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="0.752941 0.752941 0.752941 1" mesh="base_link"/> -->
     <body name="Link0" pos="0. 0. 0.">
     <geom type="mesh" rgba="0.25098 0.25098 0.25098 1" mesh="base_link"/>
-    <freejoint name="root"/>
+      <site name="basecenter" pos=" 0 0 0"/>
+    <joint name="root" type="free" />
     <body name="Link11" pos="0.0279 -0.0395 -0.040325" quat="0.669628 -0.227151 0.66963 -0.227151">
       <inertial pos="0.035786 0.0035381 -6.6449e-10" quat="0.492239 0.492239 0.507642 0.507642" mass="0.016042" diaginertia="1.11212e-05 9.1187e-06 2.4805e-06"/>
       <joint name="Joint11" pos="0 0 0" axis="0 0 -1" range="-1.57 1.57"/>
@@ -70,7 +71,7 @@
           <joint name="Joint31" pos="0 0 0" axis="0 0 -1" range="-1.57 1.57"/>
           <geom type="mesh" contype="0" conaffinity="0" group="1" density="0.5" rgba="1 1 1 1" mesh="Link31"/>
           <geom type="mesh" rgba="1 1 1 1" mesh="Link31"/>
-          <site name="s1" pos="0.084 0.0 0.06"/>
+<!--          <site name="s1" pos="0.084 0.0 0.06"/>-->
         </body>
         <body name="Link32" pos="0.02 0 0.0088" quat="0.707073 -0.707075 -0.00682417 -0.00682419">
           <inertial pos="0.042 -8.40497e-09 0.03" quat="0.645976 0.287602 0.287602 0.645976" mass="0.0115484" diaginertia="1.25409e-05 1.24503e-05 2.71512e-07"/>

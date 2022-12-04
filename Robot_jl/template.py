@@ -169,7 +169,8 @@ while not glfw.window_should_close(window):
         # mj.mj_forward(model,data)
         mtime +=dt
         mj.mj_step(model, data)
-        time.sleep(0.0001)
+        print(model.opt.timestep)
+        # time.sleep(0.001)
 
     i +=1
     # time_prev = data.time
