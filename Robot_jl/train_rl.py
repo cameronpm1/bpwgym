@@ -7,12 +7,12 @@ from Sim.sim import Sim
 
 
 def train():
-    save_dir = "log/m1/"
+    save_dir = "log/m2"
     bipedal = Sim(model='./urdf/bluebody-urdf.xml', dt=0.01)
     vec_env = BipEnv(bipedal)
     # vec_env.render_flag = True
     model = PPO("MultiInputPolicy", vec_env, verbose=1, batch_size=2048)
-    model.learn(total_timesteps=10000)
+    model.learn(total_timesteps=1000000)
     model.save(save_dir)
 
 
