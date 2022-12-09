@@ -26,11 +26,11 @@ class BipEnv(gym.Env):
         self.site_pos = self.robot._data.site_xpos
         self.site_ori = self.robot._data.site_xmat
         self.n_step = 0
-        self.epoch_p = 5
+        self.epoch_p = 100
 
     @property
     def action_space(self) -> gym.Space:
-        return spaces.Box(low=0, high=1, shape=(18,), dtype=np.float32)
+        return spaces.Box(low=-1, high=1, shape=(18,), dtype=np.float32)
 
     @property
     def observation_space(self) -> spaces.Dict:
